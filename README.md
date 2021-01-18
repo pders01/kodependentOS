@@ -1,15 +1,23 @@
 # kodepentOS
 
-This image in this repository is a customized version of raspbian meant to be used with [kootb](https://pders01.github.io/Koha_out_of_the_box). Auxilary scripts can be found in the coresponding repo.
+The image in this repository is a customized version of raspbian meant to be used with [kootb](https://pders01.github.io/Koha_out_of_the_box). Auxilary scripts can be found in the corresponding repo.
 
-[Pi-Gen](https://github.com/RPi-Distro/pi-gen) was used to build the image and you can find cues for building your own in [this](https://denariustalk.org/index.php?/topic/250-how-to-build-custom-raspbian-image-denarius-pi-denariian-pi-gen/) blogpost. Extract the gist of pi-gen and adapt accordingly. Pi-Gens documentation leaves a few things to be desired.
+The [Raspberry Pi OS lite](https://downloads.raspberrypi.org/raspios_lite_armhf/images/raspios_lite_armhf-2021-01-12/2021-01-11-raspios-buster-armhf-lite.zip) image was used as a base and built upon with several [scripts](https://github.com/pders01/Koha_out_of_the_box).
 
-* You'll have to `chmod +x build/stage2/04-run.sh` or building might fail.
-* Editing the default configuration takes place in `config`
+After building the desired image these [image-utils](https://www.raspberrypi.org/forums/viewtopic.php?f=29&t=247568) by [RonR](https://www.raspberrypi.org/forums/memberlist.php?mode=viewprofile&u=186692) were used. 
 
-Here's an example of a lite system. If you need x11 and the raspbian desktop, just skip stage 5, or 4 and 5
-```
-touch ./stage3/SKIP ./stage4/SKIP ./stage5/SKIP
-touch ./stage4/SKIP_IMAGES ./stage5/SKIP_IMAGES
-sudo ./build.sh
-```
+* First you got to unzip the archive
+* Then the scripts have to be made executable by `chmod +x image*`
+* Then just run the image-backup script and respond to the prompts.
+* In case you want to export the img immediately just mount a removable usb storage device
+	* `lsblk`
+	* pick your storage device
+	* sudo mkdir /media/storage
+	* sudo mount /dev/sdX /media/storage
+* Now pick that path for the export
+* Editing the default configuration file takes place in `config`
+
+
+
+
+
