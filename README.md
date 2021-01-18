@@ -1,4 +1,4 @@
-# kodepentOS
+# kodependentOS
 
 The image in this repository is a customized version of raspbian meant to be used with [kootb](https://pders01.github.io/Koha_out_of_the_box). Auxilary scripts can be found in the corresponding repo.
 
